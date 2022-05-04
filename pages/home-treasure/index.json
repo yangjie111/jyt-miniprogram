@@ -1,0 +1,19 @@
+{
+  "usingComponents": {
+    "van-search": "@vant/weapp/search/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-loading": "@vant/weapp/loading/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-notice-bar": "@vant/weapp/notice-bar/index",
+    "dialog":"../../components/dialog/index"
+  },
+  "enablePullDownRefresh": false,
+  "onReachBottomDistance":50,
+  "backgroundTextStyle": "dark",
+  "navigationBarTitleText": "宝物区",
+  "backgroundColor":"#f3f3f3",
+  "navigationBarBackgroundColor": "#FFF03B"
+}

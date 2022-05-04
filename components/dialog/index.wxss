@@ -1,0 +1,40 @@
+/* components/dialog/index.wxss */
+.dialog{
+  width: 80%;
+  text-align: center;
+  border-radius: 36rpx;
+  background-color: #fff;
+  padding: 20rpx;
+}
+.title{
+  font-size: 36rpx;
+  padding: 16rpx 0;
+  font-weight: 700;
+}
+.dialogtext{
+  padding: 40rpx 0 60rpx 0rpx;
+}
+.bottom{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 20rpx 0;
+}
+.one{
+  width: 80% !important;
+  border-radius: 60rpx;
+  background-color: gold;
+}
+.cancel,.enter{
+  width: 40% !important;
+}
+.cancel{
+  border: 1px solid #000;
+  border-radius: 60rpx 18rpx 18rpx 60rpx;
+  background-color: #fcfcfc;
+  padding: 19rpx 0;
+}
+.enter{
+  border-radius: 18rpx 60rpx 60rpx 18rpx;
+  background-color: rgb(255, 217, 5);
+  padding: 19rpx 0;
+}

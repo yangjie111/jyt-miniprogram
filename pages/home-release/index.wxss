@@ -1,0 +1,46 @@
+/* pages/home-video/index.wxss */
+.content{
+  padding: 20rpx 0 100rpx;
+}
+.info{
+  margin-bottom: 20rpx;
+}
+.imgInfo, .tagInfo{
+  margin: 0 24rpx 20rpx;
+  padding: 0 20rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+}
+.image{
+  width: 100%;
+}
+.title{
+  font-size: 32rpx;
+  font-weight: 700;
+  padding: 20rpx 0;
+}
+.switch{
+  position: absolute;
+  top: 50%;
+  right: 16rpx;
+  transform: translateY(-50%);
+}
+.tagContent{
+  display: flex;
+  justify-content:left;
+  flex-wrap: wrap;
+  padding: 0 0 20rpx 0;
+}
+.van-tag{
+  flex: 20%;
+  margin:0 20rpx 12rpx 0;
+}
+.tips{
+  text-align: center;
+  padding: 20rpx;
+  font-size: 30rpx;
+  color: #666;
+}
+.btn{
+  margin-top: 50rpx;
+}

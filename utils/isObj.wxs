@@ -1,0 +1,7 @@
+function isObj(obj){
+  if(JSON.stringify(obj) !== "{}") return true
+}
+
+module.exports = {
+  isObj:isObj
+}

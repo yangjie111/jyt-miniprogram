@@ -1,0 +1,21 @@
+{
+  "usingComponents": {
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "moment-item":"/components/momentItem/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-loading": "@vant/weapp/loading/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "dialog":"../../components/dialog/index"
+  },
+  "navigationBarBackgroundColor": "#F8D800",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "onReachBottomDistance":50,
+  "backgroundColor":"#f3f3f3",
+  "navigationBarTitleText": "我的发布"
+}

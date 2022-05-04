@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/home-treasure/index",
+    "pages/home-release/index",
+    "pages/home-profile/index",
+    "pages/binding-page/index",
+    "pages/moment-status-detail/index",
+    "pages/moment-detail/index",
+    "pages/collect-page/index",
+    "pages/notice-page/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/home-treasure/index",
+        "text": "宝物区",
+        "iconPath": "assets/image/tabbar/baowu_normal.png",
+        "selectedIconPath": "assets/image/tabbar/baowu_active.png"
+      },
+      {
+        "pagePath": "pages/home-release/index",
+        "text": "发布",
+        "iconPath": "assets/image/tabbar/fabu_normal.png",
+        "selectedIconPath": "assets/image/tabbar/fabu_active.png"
+      },
+      {
+        "pagePath": "pages/home-profile/index",
+        "text": "我的",
+        "iconPath": "assets/image/tabbar/profile_normal-jyt.png",
+        "selectedIconPath": "assets/image/tabbar/profile_active-jyt.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

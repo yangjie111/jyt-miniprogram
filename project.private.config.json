@@ -1,0 +1,91 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/binding-page/index",
+          "pathName": "pages/binding-page/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/home-treasure/index",
+          "pathName": "pages/home-treasure/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/home-profile/index",
+          "pathName": "pages/home-profile/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/home-release/index",
+          "pathName": "pages/home-release/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/home-profile/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/moment-detail/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/home-treasure/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/moment-status-detail/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/home-treasure/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/notice-page/index",
+          "query": "type=0",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/notice-page/index",
+          "query": "type=1",
+          "scene": null,
+          "launchMode": "default"
+        }
+      ]
+    }
+  }
+}

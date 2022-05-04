@@ -1,0 +1,112 @@
+/* pages/moment-detail/index.wxss */
+page{
+  background-color: #fff;
+}
+.swiper{
+  height: 35vh;
+}
+.detailContent{
+  position: relative;
+  background-color: #fff;
+  border-radius: 30rpx 30rpx 0 0;
+  overflow: hidden;
+  min-height: 65vh;
+}
+.van-cell-group{
+  margin: 0 !important;
+}
+.userInfo{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border-radius: 32rpx; */
+  background-color: #fff;
+  min-height: 240rpx;
+  padding-left: 20rpx;
+}
+.avatar{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1rpx solid #F8D800;
+  box-shadow: 0 12rpx 12rpx 0 rgba(104, 104, 104, 0.1);
+}
+.van-cell__value{
+  display: flex;
+  flex-wrap: wrap;
+}
+.name{
+  flex: 1;
+  align-self: flex-end;
+  font-weight: 600;
+  color: #000;
+}
+.sign{
+  position: absolute;
+  top: 40rpx;
+  right: 40rpx;
+  border-radius: 10rpx;
+  line-height: 40rpx;
+  background-color: #F8D800;
+  padding: 0 6rpx;
+  color: #000;
+  font-size: 24rpx;
+  box-shadow: rgb(0 0 0 / 10%) 0 2rpx 4rpx 0;
+  z-index: 999;
+}
+.tagItem{
+  margin:0 6rpx 6rpx 0;
+}
+.describe{
+  color: #333;
+}
+.phone{
+  color: #000;
+  font-weight: 600;
+}
+.cost{
+  border-radius: 10rpx;
+  background-color: #FF5809;
+  padding: 0 6rpx;
+  color: #fff;
+  font-size: 28rpx;
+}
+.free{
+  background-color: #62BD69;
+  padding: 0 6rpx;
+  border-radius: 10rpx;
+  color: #fff;
+  font-size: 28rpx;
+}
+.action{
+  position: fixed;
+  left: 50%;
+  bottom: 60rpx;
+  transform: translateX(-50%);
+  display: flex;
+  width: 80vw;
+  min-height: 80rpx;
+  border-radius: 60rpx;
+  overflow: hidden;
+  font-weight: 600;
+}
+.Collection{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient( 135deg, #FDEB71 10%, #F8D800 100%);
+}
+.copy{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient( 135deg, #F8D800 10%, #FDEB71 100%);
+}
+.collect{
+  padding-left: 6rpx;
+  font-size: 40rpx;
+}

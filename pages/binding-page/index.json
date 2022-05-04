@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-notify": "@vant/weapp/notify/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "dialog":"../../components/dialog/index"
+  },
+  "navigationBarTitleText": "绑定学号"
+}

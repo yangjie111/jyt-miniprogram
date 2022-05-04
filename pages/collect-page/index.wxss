@@ -1,0 +1,18 @@
+/* pages/collect-page/index.wxss */
+.collectContent{
+  padding-top: 20rpx;
+}
+.collect{
+  display: flex;
+  align-items: center;
+}
+.collect_count{
+  font-size: 38rpx;
+  padding-left: 6rpx;
+  font-weight: 600;
+  color: #666;
+}
+.scroll{
+  height: calc(100vh - 20rpx);
+  z-index: 999;
+}

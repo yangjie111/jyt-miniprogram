@@ -1,0 +1,31 @@
+<!--components/dialog/index.wxml-->
+<view wx:if="{{_show}}" class="model">
+  <view class="dialog">
+    <view class="dialogContent">
+      <view class="title">{{title}}</view>
+      <view class="dialogtext">{{text}}</view>
+      <view class="bottom" wx:if="{{btnS.length === 1}}">
+        <button 
+        wx:for="{{btnS}}"
+        data-index="{{index}}" 
+        wx:key="item" 
+        bindtap="selectClick"
+        class="one"
+        >
+          {{item}}
+        </button>
+      </view>
+      <view class="bottom" wx:if="{{btnS.length > 1}}">
+        <button 
+        wx:for="{{btnS}}"
+        data-index="{{index}}" 
+        wx:key="item" 
+        bindtap="selectClick"
+        class="{{index === 0 ? 'cancel' : 'enter'}}"
+        >
+          {{item}}
+        </button>
+      </view>
+    </view>
+  </view>
+</view> 

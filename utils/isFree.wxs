@@ -1,0 +1,26 @@
+function isFree(cost){
+  if(cost === "免费赠送") return 'free'
+  return 'cost'
+}
+
+function isVerify(str){
+  if(str === "审核中") return true
+  return false
+}
+
+function isTagActive(itemIndex,tagIndex){
+  if(itemIndex === tagIndex) return 'tagItem tagActive'
+  return 'tagItem'
+}
+
+function isCollect(isCollect){
+  if(isCollect) return true
+  return false
+}
+
+module.exports = {
+  isFree:isFree,
+  isVerify:isVerify,
+  isTagActive:isTagActive,
+  isCollect:isCollect
+}

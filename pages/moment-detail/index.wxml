@@ -1,0 +1,91 @@
+<!--pages/moment-detail/index.wxml-->
+<wxs src="/utils/isFree.wxs" module="is"></wxs>
+<!-- 轮播模块 -->
+<view class="swiper">
+  <swiper style="height: 100%;"	autoplay indicator-dots circular bindchange="handelSwiperChange">
+    <block wx:for="{{momentDetail[0].imgurl}}" wx:key="item">
+      <swiper-item bindtap="handelImageClick">
+        <van-image
+          width="100%"
+          height="100%"
+          fit="cover"
+          src="{{item}}"
+        />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<!-- 内容模块 -->
+<view class="detailContent" wx:for="{{momentDetail}}" wx:key="id">
+  <view class="sign">揭易淘</view>
+  <van-cell-group>
+    <van-cell>
+      <view class="avatar" bindtap="handelAvatarClick">
+        <van-image 
+          width="100%"
+          height="100%"
+          round
+          fit="cover center"
+          src="{{item.user.avatar}}"
+        />
+      </view>
+      <view class="name">{{item.user.name}}</view>
+    </van-cell>
+    <van-cell 
+      icon="records"
+      center
+      title="宝物描述"
+    >
+      <view class="describe">{{item.describe}}</view>
+    </van-cell>
+    <van-cell 
+      icon="phone-o"
+      title="联系方式"
+    >
+      <view class="phone">{{item.contactInfo}}</view>
+    </van-cell>
+    <van-cell 
+      icon="balance-o"
+      title="宝物价值"
+    >
+      <view class="{{is.isFree(item.cost)}}">{{item.cost === "免费赠送" ? '' : '¥'}}{{item.cost}}</view>
+    </van-cell>
+    <van-cell center icon="label-o" title="宝物标签">
+      <block wx:for="{{item.tagList}}" wx:key="id" wx:for-item="tagItem">
+        <van-tag
+          class="tagItem"
+          data-id="{{tagItem.id}}"
+          size="large" 
+          type="primary"
+        >
+          {{tagItem.tname}}
+        </van-tag>
+      </block>
+    </van-cell>
+  </van-cell-group>
+  <!-- 操作模块 -->
+<view class="action">
+  <view 
+    class="Collection" 
+    bindtap="handelCollectClick" 
+    data-isCollect="{{item.isCollect}}" 
+    data-id="{{item.id}}"
+    data-collectCount="{{item.collect_count}}"
+  >
+    <van-icon 
+    name="{{is.isCollect(item.isCollect) ? 'star' : 'star-o'}}" size="24" />
+    <text class="collect">{{item.collect_count}}</text>
+  </view>
+  <view class="copy" bindtap="handelCopyClick">
+    <van-icon name="column" />
+    联系方式
+  </view>
+</view>
+</view>
+
+<!-- 弹窗提醒 -->
+<dialog id="dialog"></dialog>
+
+<!-- 空状态 -->
+<van-empty wx:if="{{!momentDetail.length}}" description="暂无该宝物" />

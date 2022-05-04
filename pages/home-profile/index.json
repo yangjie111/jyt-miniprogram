@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-image": "@vant/weapp/image/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index"
+  },
+  "navigationBarBackgroundColor": "#FFF03B",
+  "navigationBarTitleText": "个人中心",
+  "backgroundColor":"#f3f3f3"
+}
