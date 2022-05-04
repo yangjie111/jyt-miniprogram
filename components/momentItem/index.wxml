@@ -1,0 +1,41 @@
+<!--components/momentItem/index.wxml-->
+<wxs src="../../utils/isFree.wxs" module="is"></wxs>
+<view class="item">
+  <view class="img">
+    <van-image
+      width="100%"
+      height="100%"
+      fit="cover center"
+      lazy-load
+      show-loading
+      src="{{item.img || ''}}"
+    />
+  </view>
+  <view class="info">
+    <view class="describe">
+      <view class="{{is.isVerify(title) ? 'text textColor' : 'text'}}">
+        {{item.describe}}
+      </view>
+      <view class="bottom">
+        <text class="sign">揭易淘</text>
+        <view class="{{is.isFree(item.cost)}}">
+          {{item.cost === "免费赠送" ? '' : '¥'}}{{item.cost}}
+        </view>
+      </view>
+    </view>
+    <view class="avatar">
+      <text wx:if="{{item.createAt}}" class="time">{{item.createAt}}</text>
+      <slot></slot>
+      <view class="avatarImg">
+        <van-image
+          width="100%"
+          height="100%"
+          fit="cover"
+          lazy-load
+          show-loading
+          src="{{item.user.avatar || ''}}"
+        />
+      </view>
+    </view>
+  </view>
+</view>

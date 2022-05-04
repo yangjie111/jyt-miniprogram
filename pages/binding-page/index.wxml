@@ -1,0 +1,36 @@
+<!--pages/binding-page/index.wxml-->
+<view class="content">
+  <van-notify id="van-notify" />
+  <view class="binding">
+    <view class="input">
+      <input
+        type="number"
+        id="phoneValue"
+        value="{{phoneValue}}" 
+        style="width:100%;min-height: 90rpx;padding-left: 30rpx;"
+        placeholder-class="placeholder"
+        placeholder="请输入学号绑定的手机号" 
+        bindinput="handeInput"
+       />
+    </view>
+    <view class="input">
+      <input
+        type="number" 
+        id="snoValue"
+        value="{{snoValue}}" 
+        style="width:100%;min-height: 90rpx;padding-left: 30rpx;"
+        placeholder-class="placeholder"
+        placeholder="请输入您的学号" 
+        bindinput="handeInput"
+       />
+    </view>
+    <view class="bottonBtn">
+      <button class="empty" bindtap="empty" disabled="{{isEmptyDisabled}}">清空输入</button>
+      <button class="bindingSno" bindtap="bindingSno">绑定学号</button>
+    </view>
+  </view>
+  <van-toast id="van-toast" />
+</view>
+
+<!-- 弹窗 -->
+<dialog id="dialog"></dialog>

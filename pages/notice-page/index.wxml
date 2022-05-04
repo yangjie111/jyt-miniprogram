@@ -1,0 +1,38 @@
+<!--pages/notice-page/index.wxml-->
+<view wx:if="{{type === 0}}">
+  <view class="noticeContent">
+    <van-icon name="smile-o" size="24" /> 欢迎您加入揭易淘
+  </view>
+  <view class="noticeContent">
+  <text class="title">简单说明</text>
+  <view>
+  如果你有开发基础，设计基础或者你想要为揭易淘做一些贡献，比如为揭易淘优化布局、UI设计、使用体验等等，都欢迎您来一起维护揭易淘！！！
+  </view>
+  </view>
+  <view class="noticeContent">
+    <text class="title">联系方式</text>
+    <view>
+      <text style="font-weight: 600;">微信号：</text>
+      AAA-YANG1  
+      <van-icon name="description" bindtap="copyWx" />
+    </view>
+    <view class="wximg">
+      <van-image 
+        width="200" 
+        height="200" 
+        fit="cover" 
+        src="/assets/image/img/wx.jpg" 
+        bindtap="handelImgClick" 
+      />
+    </view>
+  </view>
+</view>
+
+<view wx:else>
+  <view class="noticeContent">
+    <text class="title">关于揭易淘</text>
+    <view>揭易淘基于微信小程序开发，是一款提供闲置物品信息交换的小程序，主要目的是可以给学生带来方便的闲置物品展示以及快速的找到
+    自己想要的闲置物品，目前功能比较简单，后续会根据使用情况决定是否增加其他功能，同时您也可以将揭易淘分享给您的
+    其他同学和朋友们，感谢您对揭易淘的支持！<van-icon name="thumb-circle-o" size="24" /></view>
+  </view>
+</view>

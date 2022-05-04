@@ -1,0 +1,16 @@
+{
+  "usingComponents": {
+    "van-field": "@vant/weapp/field/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-switch": "@vant/weapp/switch/index",
+    "van-uploader": "@vant/weapp/uploader/index",
+    "van-tag": "@vant/weapp/tag/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "dialog":"../../components/dialog/index"
+  },
+  "navigationBarTitleText": "发布宝物",
+  "backgroundColor":"#f3f3f3",
+  "navigationBarBackgroundColor": "#FFF03B"
+}

@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "van-tag": "@vant/weapp/tag/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "dialog":"../../components/dialog/index"
+  },
+  "backgroundColor":"#f3f3f3",
+  "navigationBarTitleText": "宝物详情",
+  "navigationBarBackgroundColor": "#F8D800"
+}

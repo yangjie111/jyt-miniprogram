@@ -1,0 +1,118 @@
+<!-- pages/home-music/index.wxml -->
+<wxs src="../../utils/isFree.wxs" module="is"></wxs>
+<!-- 防止滚动穿透，和van-popup结合使用 -->
+<page-meta page-style="{{ isShowPopup ? 'overflow: hidden;' : '' }}" />
+<!-- 左侧菜单栏 -->
+<van-popup
+  class="popup"
+  show="{{ isShowPopup }}"
+  position="left"
+  z-index="9999"
+  custom-style="width:30%;height: 100vh"
+  bind:click-overlay="closePopup"
+>
+  <block wx:for="{{tagList}}" wx:key="id">
+    <view class="{{is.isTagActive(index,tagIndex)}}" bindtap="handelTagItemClick" data-index="{{index}}">{{item.tname}}</view>
+  </block>
+</van-popup>
+
+<!-- 头部搜索框 -->
+<view class="header">
+  <view class="sorts" bindtap="handelSelectClick">
+    {{tagList[tagIndex].tname}}
+    <van-icon name="arrow" size="20px" />
+  </view>
+  <van-notice-bar
+    class="notice-bar"
+    color="#ed6a0c"
+    background="#fffbe8"
+    scrollable 
+    left-icon="volume-o"
+    text="米西米西，滑不拉几，如果你不拉几，我就不能米西~"
+  />
+  <!-- <van-search class="search" shape="round"></van-search> -->
+</view>
+
+<!-- 滚动区域 -->
+<scroll-view 
+  scroll-y 
+  style="width: 100%;height:100%;" 
+  refresher-enabled="{{true}}" 
+  refresher-threshold="{{40}}"
+  refresher-default-style="black" 
+  refresher-background="#f3f3f3" 
+  lower-threshold="20"
+  enable-back-to-top
+  scroll-anchoring
+  bindscrolltolower="customReachBottom"
+  refresher-triggered="{{triggered}}" 
+  bindrefresherrefresh="customPullDownRefresh"
+>
+  <!-- 主体内容 -->
+   <view class="momentContent">
+      <block wx:for="{{momentData}}" wx:key="id">
+        <view class="item" bindtap="handelMomentItemClick" data-id="{{item.id}}">
+          <view class="image">
+            <van-image
+              class="img"
+              width="100%"
+              height="100%"
+              fit="cover"
+              lazy-load
+              show-loading
+              src="{{item.img}}"
+            />
+          </view>
+          <view class="info">
+            <view class="avatar">
+              <van-image
+                class="img"
+                width="100%"
+                height="100%"
+                fit="cover"
+                lazy-load
+                show-loading
+                src="{{item.user.avatar}}"
+              />
+            </view>
+            <view class="text">
+              <view class="describe">
+                {{item.describe}}
+              </view>
+              <view class="signAndCost">
+                <view>
+                  <van-icon 
+                    name="{{is.isCollect(item.isCollect) ? 'star' : 'star-o'}}" 
+                    color="{{is.isCollect(item.isCollect) ? '#FFF03B' : '#666'}}" 
+                  />
+                  <text class="collect">{{item.collect_count}}</text>
+                </view>
+                <view class="{{is.isFree(item.cost)}}">
+                  {{item.cost === "免费赠送" ? '' : '¥'}}{{item.cost}}
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+  </view>
+   <!-- 底部loading -->
+   <view class="loading">
+    <van-loading wx:if="{{isShowLoading}}" size="24px" type="spinner">拼命加载中...</van-loading>
+    <van-divider wx:if="{{!hasMore && momentData.length}}" hairline contentPosition="center">
+      <van-icon name="bulb-o" />没有更多数据啦
+    </van-divider>
+  </view>
+</scroll-view>
+
+<!-- 空视图 -->
+<van-empty
+  wx:if="{{!momentData.length}}"
+  class="custom-image"
+  image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+>
+  暂未发现宝物，赶快<text class="to" bindtap="handelToClick">前往</text>发布宝物吧！
+</van-empty>
+
+<!-- 弹窗提醒 -->
+<dialog id="dialog"></dialog>

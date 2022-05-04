@@ -1,0 +1,19 @@
+<!--components/customReach/index.wxml-->
+<!-- 自定义滚动组件 -->
+<view class="customComponent">
+  <scroll-view 
+  scroll-y 
+  style="width: 100%;height:100vh;" 
+  refresher-enabled="{{true}}" 
+  refresher-threshold="{{40}}"
+  refresher-default-style="black" 
+  refresher-background="#f3f3f3" 
+  lower-threshold="20"
+  refresher-triggered="{{triggered}}" 
+  bindrefresherrefresh="onPullDownRefresh"
+  bindscrolltolower="onReachBottom"
+>
+  <!-- 滚动的内容 -->
+  <slot></slot>
+</scroll-view>
+</view>

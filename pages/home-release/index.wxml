@@ -1,0 +1,99 @@
+<!-- pages/home-video/index.wxml -->
+<wxs src="../../utils/isObj.wxs" module="is"></wxs>
+<dialog id="dialog"></dialog>
+<van-toast id="van-toast" />
+<form catchsubmit="formSubmit" catchreset="formReset">
+  <view class="content">
+    <view class="info">
+      <van-cell-group inset>
+        <van-field 
+          data-name="describe"
+          required
+          bind:change="handelInput"
+          label="宝物描述"
+          placeholder="请输入宝物描述信息"
+          type="textarea"
+          autosize="minHeight:88"
+          maxlength="{{60}}"
+          show-word-limit
+          name="describe"
+        />
+        <van-field
+          data-name="contactInfo"
+          required 
+          bind:change="handelInput"
+          label="联系方式"
+          maxlength="{{20}}"
+          placeholder="请输入手机号或者微信号"
+          name="contactInfo"
+        />
+      <van-field 
+        required
+        data-name='cost'
+        label="宝物价值"
+        bind:change='handelInput'
+        type="number"
+        maxlength="{{4}}"
+        value="{{switch1Checked ? '免费赠送' : ''}}"
+        placeholder="可选择是否免费赠送"
+        readonly="{{switch1Checked}}"
+        custom-style="position: relative"
+        name="cost"
+      >
+        <switch slot="button" name="isFree" checked="{{switch1Checked}}" bindchange="handelSwitch" />
+        <!-- <view slot="button" class="switch">
+          <switch name="isFree" checked="{{switch1Checked}}" bindchange="handelSwitch" />
+        </view> -->
+      </van-field>
+      </van-cell-group>
+    </view>
+    <view class="imgInfo">
+      <view class="title">选择宝物图片</view>
+      <view class="imgContent">
+        <van-uploader 
+          class="image"
+          max-count="6"
+          bind:after-read="afterRead"
+          bind:delete="fileDelete"
+          file-list="{{ fileList }}"
+          accept="image"
+          multiple
+          preview-size="200rpx"
+        />
+      </view>
+    </view>
+    <view class="tagInfo">
+      <view class="title">选择宝物标签</view>
+      <view class="tagContent">
+        <van-tag wx:for="{{tagList}}"
+                wx:key="id"
+                data-id="{{item.id}}"
+                bindtap="handeltagClick" 
+                plain 
+                size="large" 
+                type="{{index % 2 === 0 ? 'primary' : 'success'}}"
+        >
+          {{item.tname}}
+        </van-tag>
+      </view>
+      <view class="selectedTags" wx:if="{{is.isObj(selectedTags)}}">
+        <view class="title">已选择标签</view>
+        <van-tag wx:for="{{selectedTags}}" 
+                wx:key="index"
+                size="large" 
+                type="primary"
+                closeable
+                id="{{index}}"
+                bind:close="cancelTag"
+        >
+          {{item.tname}}
+        </van-tag>
+      </view>
+    </view>
+    <view class="tips">
+      <van-icon name="bullhorn-o" />
+       上传完成后会审核内容是否安全，您可以选择是否接收审核结果通知
+    </view>
+    <button class="btn" type="primary" form-type="submit">提交信息</button>
+  </view>
+</form>

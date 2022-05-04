@@ -1,0 +1,63 @@
+<!--pages/moment-detail/index.wxml-->
+<wxs src="../../utils/isFree.wxs" module="is"></wxs>
+<view class="tabs">
+  <van-tabs animated color="#F8D800" bind:click="handelTabsClick">
+    <block wx:for="{{momentStatusList}}" wx:key="index">
+      <van-tab title="{{index}}" class="tab">
+        <scroll-view
+          scroll-y 
+          class="scroll"
+          refresher-enabled="{{true}}" 
+          refresher-threshold="{{40}}"
+          refresher-default-style="black" 
+          enable-back-to-top
+          scroll-anchoring
+          refresher-background="#f3f3f3" 
+          lower-threshold="20"
+          bindscrolltolower="customReachBottom"
+          refresher-triggered="{{triggered}}" 
+          bindrefresherrefresh="customPullDownRefresh"
+        >
+          <view class="test">
+            <view wx:if="{{!item.data.length}}">
+              <van-empty
+                class="custom-image"
+                image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+                description="暂无数据"
+              />
+            </view>
+              <block wx:for="{{item.data}}" wx:for-item="itemName" wx:for-index="itemIndex" wx:key="id">
+                <view wx:if="{{is.isVerify(index)}}">
+                  <moment-item item="{{itemName}}" title="{{index}}"/>
+                </view>
+                <view wx:else>
+                  <van-swipe-cell 
+                    right-width="{{ 65 }}" 
+                    async-close 
+                    bind:close="handelCloseClick" 
+                    data-id="{{itemName.id}}"
+                    data-index="{{itemIndex}}"
+                  >
+                    <moment-item item="{{itemName}}" data-id="{{itemName.id}}" bindtap="handelItemClick" />
+                    <view slot="right" class="deltte">删除</view>
+                  </van-swipe-cell>
+                </view>
+              </block>
+              <!-- 底部loading -->
+              <view class="loading">
+                <van-loading wx:if="{{isShowLoading}}" size="24px" type="spinner">拼命加载中...</van-loading>
+                <van-divider 
+                  wx:if="{{!momentStatusList[currentTabTitle].hasMore && momentStatusList[currentTabTitle].data.length}}" hairline 
+                  contentPosition="center"
+                >
+                  <van-icon name="bulb-o" />没有更多数据啦
+                </van-divider>
+              </view>
+          </view>
+        </scroll-view>
+      </van-tab>
+    </block>
+  </van-tabs>
+</view>
+<dialog id="dialog"></dialog>
+<van-toast id="van-toast" />
